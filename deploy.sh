@@ -10,9 +10,7 @@ git init
 git add -A
 git commit -m 'deploy page'
 
-git pull --rebase origin main
-
 # 如果部署到 https://<USERNAME>.github.io
-git push -f git@github.com:YolandaKisses/YolandaKisses.github.io.git main
+git push -f git@github.com:YolandaKisses/YolandaKisses.github.io.git master
 
 cd -
