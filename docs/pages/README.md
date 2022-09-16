@@ -9,9 +9,9 @@ npm install dd-ui-library
 ```
 ## 快速上手
 ```
-import ddUiLibrary from 'dd-ui-library'
+import DataDriverUI from 'dd-ui-library'
 
 import 'dd-ui-library/dd-ui-library.css'
 
-Vue.use(ddUiLibrary);
+Vue.use(DataDriverUI);
 ```
