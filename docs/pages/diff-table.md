@@ -1,4 +1,4 @@
-# diff-table
+# diff-table 差异化表格对比
 
 ## 基本用法
 
@@ -8,7 +8,6 @@
 <template>
   <diff-table :data-group="[oldData, newData]" :columns="tableColumns" />
 </template>
-
 <script>
 export default {
   data() {
@@ -47,16 +46,24 @@ export default {
 ### Attributes
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
-| value / v-model | 绑定值 | string | — | — |
-| disabled | 是否禁用 | boolean | — | false |
-| size | 尺寸 | string | medium / small / mini | — |
-| show-alpha | 是否支持透明度选择 | boolean | — | false |
-| color-format | 写入 v-model 的颜色的格式 | string | hsl / hsv / hex / rgb | hex（show-alpha 为 false）/ rgb（show-alpha 为 true） |
-| popper-class | ColorPicker 下拉框的类名 | string | — | — |
-| predefine | 预定义颜色 | array | — | — |
+| uniqueKey | 对比唯一key(必填) | String | — | id |
+| dataGroup | 需对比表格数据源(一组) | Array (validator: (val) => val.length === 2) | — | — |
+| columns | 需对比表格的列(必填) | Array | — | — |
+| addRowColor | 新增行背景色 | String | — | #E1F3D8 |
+| addRowTxtColor | 新增行字体颜色 | String | — | red |
+| diffCellColor | 差异单元格背景色 | String | — | rgba(254, 250, 207) |
+| diffCellTxtColor | 差异单元格字体颜色 | String | — | red |
+| tableHeight | 表格高度 | String | — | — |
+| stripe | 是否斑马纹 | Boolean | — | true |
+| border | 是否需要边框 | Boolean | — | true |
+| headerCellStyle | 自定义表头 | Object | — | — |
 
-### Events
-| 事件名称      | 说明    | 回调参数      |
-|---------- |-------- |---------- |
-| change | 当绑定值变化时触发 | 当前值 |
-| active-change | 面板中当前显示的颜色发生改变时触发 | 当前显示的颜色值 |
+### Columns Attributes 在 Columns 属性列中定义
+| 参数      | 说明    | 类型      | 可选值       | 默认值   |
+|---------- |-------- |---------- |---------- |---------- |
+| prop | 对应列内容的字段名 | String | — | — |
+| label | 显示的标题 | String | — | — |
+| width | 对应列的宽度 | String | — | — |
+| min-width | 对应列的最小宽度 | String |  — | 100 |
+| header-align | 表头对齐方式 | String | left/center/right | center |
+| align	 | 方式 | String | left/center/right | center |
