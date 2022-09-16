@@ -1,4 +1,4 @@
-# diff-table 差异化表格对比组件
+# diff-table 差异化表格
 
 ## 基本用法
 
