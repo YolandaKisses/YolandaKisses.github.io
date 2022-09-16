@@ -22,7 +22,7 @@ module.exports = {
       // 配置侧边栏部分
       "/pages/": [
         {
-          title: "安装",
+          title: "使用指南",
           collapsable: true,
           path: '/pages/'
         },
