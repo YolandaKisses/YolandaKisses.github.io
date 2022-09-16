@@ -18,7 +18,7 @@ module.exports = {
       }
     ],
     sidebar: { // 配置侧边栏部分
-      '/pages/': ['/pages/', '/pages/PaginationSelect.md']
+      '/pages/': ['/pages/', '/pages/diff-table.md']
     }
   },
   plugins: ['demo-container'], // 配置插件
