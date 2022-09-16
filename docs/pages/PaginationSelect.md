@@ -1,73 +1,43 @@
-# Pagination-Select 带分页的下拉框
+# diff-table
 
 ## 基本用法
 
-::: demo Pagination-Select 带分页的下拉框
+::: demo diff-table
 ```html
 <template>
-  <PaginationSelect
-    :selectOptions="selectOptions"
-    @getSelectVal="getSelectVal"
-    @handleSizeChange="handleSizeChange"
-    @handleCurrentChange="handleCurrentChange"
-    @remoteMethod="remoteMethod"
-  />
+  <diff-table :data-group="[oldData, newData]" :columns="tableColumns" />
 </template>
 
 <script>
-  export default {
-   data() {
+export default {
+  data() {
     return {
-      // select组件配置项
-      selectOptions: {
-        filterable: true,
-        clearable: true,
-        placeholder: "请选择",
-        size: "small",
-        multiple: false,
-        collapseTags: false,
-        currentPage: 1,
-        pageSize: 2,
-        remote: true,
-        selectData: [
-          {
-            value: "1",
-            label: "黄金糕",
-          },
-          {
-            value: "2",
-            label: "双皮奶",
-          },
-          {
-            value: "3",
-            label: "蚵仔煎",
-          },
-          {
-            value: "4",
-            label: "龙须面",
-          },
-          {
-            value: "5",
-            label: "北京烤鸭",
-          },
-        ],
-      },
+      oldData: [
+        { id: 1, name: "zhangsan1", age: 23, address: "zxczxczxc" },
+        { id: 2, name: "zhangsan2", age: 23.5, address: "zxczxczxc" },
+        { id: 3, name: "zhangsan34", age: 23, address: "zxczxczxc" },
+        { id: 4, name: "zhangsan4", age: 23, address: "zxczxczxc" },
+        { id: 5, name: "zhangsan5", age: 23, address: "zxczxczxc" },
+        { id: 6, name: "zhangsan5", age: 23, address: "zxczxczxc" },
+      ],
+      newData: [
+        { id: 1, name: "zhangsan1", age: 23, address: "zxczxczxc" },
+        { id: 2, name: "zhangsan2", age: 23, address: "zxczxczxc" },
+        { id: 4, name: "zhangsan4", age: 23, address: "地址地址地址" },
+        { id: 3, name: "zhangsan3", age: 23, address: "zxczxczxc" },
+        { id: 5, name: "zhangsan5", age: 23, address: "zxczxczxc" },
+        { id: 6, name: "zhangsan5", age: 13, address: "zxczxczxc" },
+        { id: 7, name: "zhangsan5", age: 23, address: "zxczxczxc" },
+      ],
+      tableColumns: [
+        { label: "唯一id", prop: "id" },
+        { label: "名称", prop: "name" },
+        { label: "年龄", prop: "age" },
+        { label: "地址", prop: "address" },
+      ],
     };
   },
-  methods: {
-    remoteMethod(val) {
-      console.log(val, "远程搜索");
-    },
-    getSelectVal(val) {
-      console.log(val, "选中值");
-    },
-    handleSizeChange(val) {
-      this.selectOptions.pageSize = val;
-    },
-    handleCurrentChange(val) {
-      this.selectOptions.currentPage = val;
-    },
-  },
-  }
+  methods: {},
+};
 </script>
 ```

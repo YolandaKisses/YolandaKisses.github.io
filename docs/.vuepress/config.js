@@ -1,7 +1,9 @@
+const path = require('path')
 module.exports = {
   theme: '',
   title: 'dataDriver - Element - Echarts',
   description: 'VuePress搭建Element + Echarts的业务组件库文档教程示例代码',
+  palette: path.resolve(__dirname, 'palette.styl'),
   base: '/',
   port: '8080',
   themeConfig: {
