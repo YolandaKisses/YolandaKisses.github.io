@@ -23,12 +23,15 @@ module.exports = {
         {
           title: "使用指南",
           collapsable: true,
-          path: '/pages/'
+          path: "/pages/"
         },
         {
-          title: "基于Element",
+          title: "基于Element + Vxe",
           collapsable: true,
-          children: [{ title: "diff-table 差异化表格", path: "/pages/diff-table.md" }]
+          children: [
+            { title: "diff-table 表格差异化对比高亮展示", path: "/pages/diff-table.md" },
+            { title: "multiple-select-table 带表格查询的下拉框", path: "/pages/multiple-select-table.md" }
+          ]
         },
         {
           title: "基于Echarts",

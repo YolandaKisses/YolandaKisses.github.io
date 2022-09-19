@@ -1,4 +1,4 @@
-# diff-table 差异化表格
+# diff-table 表格差异化对比高亮展示
 
 ## 完整用法
 
