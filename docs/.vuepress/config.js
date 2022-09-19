@@ -29,8 +29,8 @@ module.exports = {
           title: "基于Element + Vxe",
           collapsable: true,
           children: [
-            { title: "diff-table 表格差异化对比高亮展示", path: "/pages/diff-table.md" },
-            { title: "multiple-select-table 带表格查询的下拉框", path: "/pages/multiple-select-table.md" }
+            { title: "diff-table 表格差异化对比高亮展示", path: "/pages/components/diff-table.md" },
+            { title: "multiple-select-table 带表格查询的下拉框", path: "/pages/components/multiple-select-table.md" },
           ]
         },
         {
@@ -41,7 +41,11 @@ module.exports = {
         {
           title: "CommonUtils工具类",
           collapsable: true,
-          children: []
+          children: [
+            { title: "listToTree线性列表转树性列表", path: "/pages/utils/listToTree.md" },
+            { title: "convertToDictLabel 根据指定值从字典数据中转换label", path: "/pages/utils/convertToDictLabel.md" },
+            { title: "Web Storage使用", path: "/pages/utils/webStorage.md" },
+          ]
         }
       ]
     }
