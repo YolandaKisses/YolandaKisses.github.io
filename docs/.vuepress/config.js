@@ -31,8 +31,13 @@ module.exports = {
           collapsable: true,
           children: [{ title: "diff-table 差异化表格", path: "/pages/diff-table.md" }]
         },
-         {
+        {
           title: "基于Echarts",
+          collapsable: true,
+          children: []
+        },
+        {
+          title: "CommonUtils工具类",
           collapsable: true,
           children: []
         }
