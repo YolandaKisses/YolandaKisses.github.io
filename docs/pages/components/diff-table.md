@@ -1,8 +1,5 @@
 # diff-table 表格差异化对比高亮展示
 
-## 完整用法
-
-
 ::: demo
 ```html
 <template>
