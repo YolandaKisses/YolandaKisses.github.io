@@ -36,7 +36,7 @@ module.exports = {
         {
           title: "基于Echarts",
           collapsable: true,
-          children: []
+          children: [ { title: "pie", path: "/pages/echarts/my-chart.md" },]
         },
         {
           title: "CommonUtils工具类",
