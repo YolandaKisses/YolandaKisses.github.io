@@ -31,6 +31,7 @@ module.exports = {
           children: [
             { title: "diff-table 表格差异化对比高亮展示", path: "/pages/components/diff-table.md" },
             { title: "multiple-select-table 带表格查询的下拉框", path: "/pages/components/multiple-select-table.md" },
+            { title: "query-from 查询表单", path: "/pages/components/query-form.md" },
           ]
         },
         {
