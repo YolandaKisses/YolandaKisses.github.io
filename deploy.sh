@@ -3,6 +3,9 @@
 # 忽略错误
 set -e
 
+# 打包
+npm run docs:build
+
 # 进入待发布的目录
 cd docs/.vuepress/dist
 
