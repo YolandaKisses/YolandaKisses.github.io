@@ -98,6 +98,8 @@ export default {
 
 ### Attributes
 
+<div class="special_table">
+
 | 参数           | 说明            | 类型          | 可选值 | 默认值       |
 | -------------- | -------------- | ------------- | ------ | ----------- |
 | v-model        | 绑定值          | string/number | — | — |
@@ -109,9 +111,15 @@ export default {
 | treeData       | tree数据        | array         | — | — |
 | defaultProps   | tree 配置项     | obj           | — | { children: "children", label: "label" } |
 
+</div>
+
 ### Events
+
+<div class="special_table">
 
 | 事件名称 | 说明                                   | 回调参数             |
 | --------| -------------------------------------- | ------------------- |
 | change  | 选中值发生变化时触发                     | 选中节点所对应的对象  |
 | clear   | 可清空的单选模式下用户点击清空按钮时触发   | —                   |
+
+</div>

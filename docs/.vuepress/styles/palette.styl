@@ -2,6 +2,21 @@
   max-width: none
 }
 
-.page .el-table__body, .el-table__header {
-  margin: 0
-}
+.special_table
+  table
+    border-collapse collapse
+    margin 1rem 0
+    display: block
+    overflow-x: auto
+
+.special_table
+  tr
+    border-top 1px solid #dfe2e5
+
+    &:nth-child(2n)
+      background-color #f6f8fa
+
+.special_table
+  th, td
+    border 1px solid #dfe2e5
+    padding .6em 1em

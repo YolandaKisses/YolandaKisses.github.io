@@ -54,6 +54,8 @@
 
 ### Attributes
 
+<div class="special_table">
+
 | 参数             | 说明                   | 类型            | 可选值 | 默认值       |
 | ---------------- | ---------------------- | --------------- | ------ | ----------- |
 | v-model          | 绑定值                 | array           |    —   |       —     |
@@ -66,9 +68,15 @@
 | width            | 下拉表格宽度           | string          |    —   | 650px       |
 | checCheckboxkMethod  | 禁止勾选设置       | fun({ row })    |    —   |       —     |
 
+</div>
+
 ### Events
+
+<div class="special_table">
 
 | 事件名称         | 说明               | 回调参数 | 
 | ------------     | ------------------ | ------   | 
 | checkboxAll      | 当手动勾选全选时触发的事件 | checked, records |
 | checkboxChange   | 当手动勾选并且值发生改变时触发的事件  | checked, records |
+
+</div>

@@ -95,6 +95,8 @@ export default {
 
 ### Attributes
 
+<div class="special_table">
+
 | 参数           | 说明         | 类型        | 可选值 | 默认值       |
 | -------------- | ----------- | ----------- | ------ | ----------- |
 | model          | 表单数据对象 | object      |    —   |       —     |
@@ -104,7 +106,11 @@ export default {
 | label-position | 表单域标签的位置，如果值为 left 或者 right 时，则需要设置 label-width     | string  | right/left/top|      —     |
 | label-width    | 表单域标签的宽度，例如 '50px'。作为 Form 直接子元素的 form-item 会继承该值。支持 auto。 | string   |    —   |     —     |
 
+</div>
+
 ### formList-item
+
+<div class="special_table">
 
 | 参数             | 说明                   | 类型            | 可选值 | 默认值       |
 | ---------------- | ---------------------- | --------------- | ------ | ----------- |
@@ -120,7 +126,11 @@ export default {
 | optionProps |  { value: "dimCde", label: "dimNme" }（用于type=select） |  object |    —   |    —    |
 | size        |  尺寸                         | string   |    medium / small / mini   |     —    |
 
+</div>
+
 ### buttonList-item
+
+<div class="special_table">
 
 | 参数      | 说明         | 类型   | 可选值 | 默认值       |
 | -------  | ------------ | ------ | ------ | ----------- |
@@ -133,7 +143,11 @@ export default {
 | icon     | 图标类名       | string |   —   |      false     |
 | click    | 点击事件（this.onQuery） | fun |   —   |      —     |
 
+</div>
+
 ### Methods
+
+<div class="special_table">
 
 | 方法名            | 说明                |
 | ---------------- | ------------------- |
@@ -141,5 +155,7 @@ export default {
 | validateField    | 详见 element-ui 文档 |
 | resetFields      | 详见 element-ui 文档 |
 | clearValidate    | 详见 element-ui 文档 |
+
+</div>
 
 例：this.$refs.QueryForm.Methods().resetFields()

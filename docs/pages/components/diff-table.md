@@ -41,6 +41,9 @@ export default {
 :::
 
 ### Attributes
+
+<div class="special_table">
+
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
 | uniqueKey | 对比唯一key(必填) | String | — | id |
@@ -55,7 +58,12 @@ export default {
 | border | 是否需要边框 | Boolean | — | true |
 | headerCellStyle | 自定义表头 | Object | — | — |
 
+</div>
+
 ### Columns Attributes 在 Columns 属性列中定义
+
+<div class="special_table">
+
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |---------- |---------- |
 | prop | 对应列内容的字段名 | String | — | — |
@@ -64,3 +72,5 @@ export default {
 | min-width | 对应列的最小宽度 | String |  — | 100 |
 | header-align | 表头对齐方式 | String | left/center/right | center |
 | align	 | 方式 | String | left/center/right | center |
+
+</div>
