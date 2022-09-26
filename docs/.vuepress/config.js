@@ -30,7 +30,8 @@ module.exports = {
           collapsable: true,
           children: [
             { title: "diff-table 表格差异化对比高亮展示", path: "/pages/components/diff-table.md" },
-            { title: "multiple-select-table 带表格查询的下拉框", path: "/pages/components/multiple-select-table.md" },
+            { title: "select-table 带表格查询的单选下拉框", path: "/pages/components/select-table.md" },
+            { title: "multiple-select-table 带表格查询的多选下拉框", path: "/pages/components/multiple-select-table.md" },
             { title: "query-from 查询表单", path: "/pages/components/query-form.md" },
             { title: "select-tree 下拉树单选", path: "/pages/components/select-tree.md" },
             { title: "multiple-select-tree 下拉树多选", path: "/pages/components/multiple-select-tree.md" },

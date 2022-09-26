@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "async-validator": "^1.11.5",
-    "dd-ui-library": "^1.0.17",
+    "dd-ui-library": "^1.0.18",
     "element-ui": "^2.15.10",
     "vuepress-plugin-demo-container": "^0.2.0",
     "vxe-table": "^3.6.6",

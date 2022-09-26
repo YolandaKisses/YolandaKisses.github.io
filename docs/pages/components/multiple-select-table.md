@@ -1,4 +1,4 @@
-# multiple-select-table 带表格查询的下拉框 
+# multiple-select-table 带表格查询的多选下拉框 
 
 ::: demo
 
@@ -9,8 +9,8 @@
     v-model="formQuery.vcFundCodes"
     :data="fundList"
     :Columns="Columns"
-    id-field="vcFundCode"
-    name-field="vcFundName"
+    value-field="vcFundCode"
+    label-field="vcFundName"
     placeholder="请选择"
   />
 </template>
@@ -61,9 +61,10 @@
 | v-model          | 绑定值                 | array           |    —   |       —     |
 | data             | 下拉表格数据           | array           |    —   |       —     |
 | Columns          | 下拉表格表头           | array           |    —   |       —     |
-| idField          | v-model 数组保存的字段 | String          |    —   |       —     |
-| nameField        | 显示在文本框的字段     | string          |    —   |       —     |
+| valueField       | v-model 数组保存的字段 | String          |    —   |       —     |
+| labelField       | 显示在文本框的字段     | string          |    —   |       —     |
 | placeholder      | 输入框占位文本         | string          |    —   |       —     |
+| disabled         | 是否禁用               | boolean         |    —   | false       |
 | checkStrictly    | 是否不展示全选Checkbox | boolean         |    —   | false       |
 | width            | 下拉表格宽度           | string          |    —   | 650px       |
 | checCheckboxkMethod  | 禁止勾选设置       | fun({ row })    |    —   |       —     |
@@ -74,7 +75,7 @@
 
 <div class="special_table">
 
-| 事件名称         | 说明               | 回调参数 | 
+| 事件名称          | 说明               | 回调参数  | 
 | ------------     | ------------------ | ------   | 
 | checkboxAll      | 当手动勾选全选时触发的事件 | checked, records |
 | checkboxChange   | 当手动勾选并且值发生改变时触发的事件  | checked, records |
