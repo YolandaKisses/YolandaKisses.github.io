@@ -55,7 +55,8 @@ module.exports = {
                   title: "convertToDictLabel 根据指定值从字典数据中转换label",
                   path: "/pages/utils/methods/convertToDictLabel.md"
                 },
-                { title: "convertToOptions 转换成下拉数据", path: "/pages/utils/methods/convertToOptions.md" }
+                { title: "convertToOptions 转换成下拉数据", path: "/pages/utils/methods/convertToOptions.md" },
+                { title: "Promise.all() 封装", path: "/pages/utils/methods/myPromiseAll.md" },
               ]
             },
             {
