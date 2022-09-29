@@ -67,7 +67,7 @@ function PromiseObj(item){
       key: "bbb"
     }
   ];
-  fun.myPromiseAll(arr).then(res=>{
+  fun.myPromiseAll(requestArr).then(res=>{
     console.log("res", res);
   })
 </script>
