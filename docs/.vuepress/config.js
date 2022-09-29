@@ -49,13 +49,12 @@ module.exports = {
             {
               title: "工具类方法调用",
               children: [
-                { title: "Web Storage使用", path: "/pages/utils/methods/webStorage.md" },
-                { title: "listToTree线性列表转树性列表", path: "/pages/utils/methods/listToTree.md" },
+                { title: "converTreeData 线性列表转树性列表", path: "/pages/utils/methods/converTreeData.md" },
                 {
                   title: "convertToDictLabel 根据指定值从字典数据中转换label",
                   path: "/pages/utils/methods/convertToDictLabel.md"
                 },
-                { title: "convertToOptions 转换成下拉数据", path: "/pages/utils/methods/convertToOptions.md" },
+                { title: "convertToGroup 根据pkey归类", path: "/pages/utils/methods/convertToGroup.md" },
                 { title: "Promise.all() 封装", path: "/pages/utils/methods/myPromiseAll.md" },
               ]
             },
@@ -63,7 +62,6 @@ module.exports = {
               title: "公共API接口",
               children: [
                 { title: "getSqlDataBySqlCode 通用sqlCode接口", path: "/pages/utils/api/getSqlDataBySqlCode.md" },
-                { title: "dictionaryList 获取数据字典数据", path: "/pages/utils/api/dictionaryList.md" }
               ]
             }
           ]
