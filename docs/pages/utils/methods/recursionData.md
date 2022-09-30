@@ -36,5 +36,5 @@ this.$CommonUtils.appendNodeById(list, targetId, obj);
  * @param {*} targetId 目标id
  * @param {*} obj 目标对象
  */
-this.$CommonUtils.deleteNodeById(list, targetId, obj);
+this.$CommonUtils.updateNodeById(list, targetId, obj);
 ```
