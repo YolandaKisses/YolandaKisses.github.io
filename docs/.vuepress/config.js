@@ -55,6 +55,7 @@ module.exports = {
                   path: "/pages/utils/methods/convertToDictLabel.md"
                 },
                 { title: "convertToGroup 根据pkey归类", path: "/pages/utils/methods/convertToGroup.md" },
+                { title: "recursionData 根据id递归树curd", path: "/pages/utils/methods/recursionData.md" },
                 { title: "Promise.all() 封装", path: "/pages/utils/methods/myPromiseAll.md" },
               ]
             },
