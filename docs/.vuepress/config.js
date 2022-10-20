@@ -49,13 +49,13 @@ module.exports = {
             {
               title: "工具类方法调用",
               children: [
-                { title: "converTreeData 线性列表转树性列表", path: "/pages/utils/methods/converTreeData.md" },
+                { title: "converTreeData", path: "/pages/utils/methods/converTreeData.md" },
                 {
-                  title: "convertToDictLabel 根据指定值从字典数据中转换label",
+                  title: "convertToDictLabel",
                   path: "/pages/utils/methods/convertToDictLabel.md"
                 },
-                { title: "convertToGroup 根据pkey归类", path: "/pages/utils/methods/convertToGroup.md" },
-                { title: "recursionData 根据id递归树curd", path: "/pages/utils/methods/recursionData.md" },
+                { title: "convertToGroup", path: "/pages/utils/methods/convertToGroup.md" },
+                { title: "recursionData", path: "/pages/utils/methods/recursionData.md" },
                 { title: "Promise.all() 封装", path: "/pages/utils/methods/myPromiseAll.md" },
               ]
             },
@@ -63,6 +63,16 @@ module.exports = {
               title: "公共API接口",
               children: [
                 { title: "getSqlDataBySqlCode 通用sqlCode接口", path: "/pages/utils/api/getSqlDataBySqlCode.md" },
+              ]
+            },
+            {
+              title: "通用正则表达式",
+              children: [
+                { title: "转换为百分位/千分位/万分位", path: "/pages/utils/RegExp/ConvertUnit.md" },
+                { title: "正数，可以是整数，也可以是浮点数", path: "/pages/utils/RegExp/isPositiveNumber.md" },
+                { title: "验证电子邮箱格式是否正确", path: "/pages/utils/RegExp/validEmail.md" },
+                { title: "验证手机号格式是否正确", path: "/pages/utils/RegExp/phone.md" },
+                { title: "判断是否为空", path: "/pages/utils/RegExp/isNull.md" },
               ]
             }
           ]
