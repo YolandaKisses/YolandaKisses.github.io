@@ -2,8 +2,8 @@
 
 ```javascript
 /**
- * 验证手机号格式是否正确
- * @param { Any } value 待验证的手机号
+ * 判断是否为空
+ * @param {*} val 待验证内容
  * @returns 验证结果
  */
 const res1 = this.$CommonUtils.isNull();

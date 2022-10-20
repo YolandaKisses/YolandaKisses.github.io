@@ -73,6 +73,7 @@ module.exports = {
                 { title: "验证电子邮箱格式是否正确", path: "/pages/utils/RegExp/validEmail.md" },
                 { title: "验证手机号格式是否正确", path: "/pages/utils/RegExp/phone.md" },
                 { title: "判断是否为空", path: "/pages/utils/RegExp/isNull.md" },
+                { title: "验证身份证号", path: "/pages/utils/RegExp/validIdentity.md" },
               ]
             }
           ]
