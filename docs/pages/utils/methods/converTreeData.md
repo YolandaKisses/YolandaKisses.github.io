@@ -2,7 +2,7 @@
 
 ```javascript
 /**
- * 线性结构转树形结构
+ * @desc 线性结构转树形结构
  * @param {*} nodes 节点
  * @param {*} treeRootId 顶级根节点
  * @param {*} pidName 父节点名
@@ -10,10 +10,11 @@
  * @param {*} mid 树形key
  * @returns
  */
- const result = this.$CommonUtils.converTreeData(list, "XBRL", "VC_PARENT_NAME", "VC_ELEMENT_NAME_EN").data;
+const result = this.$CommonUtils.converTreeData(list, "XBRL", "VC_PARENT_NAME", "VC_ELEMENT_NAME_EN").data;
 ```
 
 # 使用举例
+
 ```javascript
 // 定义数据
 const list = [

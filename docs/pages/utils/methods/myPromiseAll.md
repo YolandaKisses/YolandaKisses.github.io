@@ -2,50 +2,48 @@
 
 ```html
 <script>
+  /**
+   * @desc Promise.all() 封装
+   * @param {Array} array 接口参数
+   */
+  export function myPromiseAll(array) {
+    let AllList = [];
+    array.forEach((item) => {
+      AllList.push(PromiseObj(item));
+    });
+    return Promise.all(AllList);
+  }
 
-/**
- * Promise.all() 封装
- * @param {Array} array 接口参数
-*/
-export function myPromiseAll(array){
-  let AllList = []
-  array.forEach(item=>{
-    AllList.push(PromiseObj(item))
-  })
-  return Promise.all(AllList)
-}
-
-function PromiseObj(item){
-  return new Promise((resolve, reject)=>{
-    let obj = {};
-    if(item.method == "get"){
-      obj = {
-        url: item.url + '?' + qs.stringify(item.params),
-        method: 'get'
-      }
-    }
-    if(item.method == "post"){
-      if(item.paramsType == "json"){
+  function PromiseObj(item) {
+    return new Promise((resolve, reject) => {
+      let obj = {};
+      if (item.method == "get") {
         obj = {
-          url: item.url,
-          method: 'post',
-          data: item.params
+          url: item.url + "?" + qs.stringify(item.params),
+          method: "get"
+        };
+      }
+      if (item.method == "post") {
+        if (item.paramsType == "json") {
+          obj = {
+            url: item.url,
+            method: "post",
+            data: item.params
+          };
+        }
+        if (item.paramsType == "formdata") {
+          obj = {
+            url: item.url,
+            method: "post",
+            data: qs.stringify(item.params)
+          };
         }
       }
-      if(item.paramsType == "formdata"){
-        obj = {
-          url: item.url,
-          method: 'post',
-          data: qs.stringify(item.params)
-        }
-      }
-    }
-    request(obj).then(res=>{
-      resolve({ key:item.key, data:res.data })
-    })
-  })
-}
-
+      request(obj).then((res) => {
+        resolve({ key: item.key, data: res.data });
+      });
+    });
+  }
 </script>
 ```
 
@@ -67,8 +65,8 @@ function PromiseObj(item){
       key: "bbb"
     }
   ];
-  fun.myPromiseAll(requestArr).then(res=>{
+  fun.myPromiseAll(requestArr).then((res) => {
     console.log("res", res);
-  })
+  });
 </script>
 ```
