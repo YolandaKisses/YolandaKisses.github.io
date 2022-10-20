@@ -56,13 +56,13 @@ module.exports = {
                 },
                 { title: "convertToGroup", path: "/pages/utils/methods/convertToGroup.md" },
                 { title: "recursionData", path: "/pages/utils/methods/recursionData.md" },
-                { title: "Promise.all() 封装", path: "/pages/utils/methods/myPromiseAll.md" },
+                { title: "Promise.all() 二次封装", path: "/pages/utils/methods/myPromiseAll.md" },
               ]
             },
             {
               title: "公共API接口",
               children: [
-                { title: "getSqlDataBySqlCode 通用sqlCode接口", path: "/pages/utils/api/getSqlDataBySqlCode.md" },
+                { title: "getSqlDataBySqlCode", path: "/pages/utils/api/getSqlDataBySqlCode.md" },
               ]
             },
             {
