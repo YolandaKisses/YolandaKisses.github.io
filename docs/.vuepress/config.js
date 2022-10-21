@@ -57,6 +57,7 @@ module.exports = {
                 { title: "convertToGroup", path: "/pages/utils/methods/convertToGroup.md" },
                 { title: "recursionData", path: "/pages/utils/methods/recursionData.md" },
                 { title: "arrObjSort", path: "/pages/utils/methods/arrObjSort.md" },
+                { title: "timeStamp2String", path: "/pages/utils/methods/timeStamp2String.md" },
                 { title: "Promise.all() 二次封装", path: "/pages/utils/methods/myPromiseAll.md" },
               ]
             },
