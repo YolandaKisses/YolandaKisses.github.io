@@ -15,6 +15,10 @@ module.exports = {
       {
         text: "组件",
         link: "/pages/"
+      },
+      {
+        text: "规范",
+        link: "/standard/"
       }
     ],
     sidebar: {
@@ -80,8 +84,15 @@ module.exports = {
             }
           ]
         }
+      ],
+      "/standard/": [
+        {
+          title: "后台管理系统说明",
+          collapsable: true,
+          path: "/standard/"
+        },
       ]
     }
   },
-  plugins: ["demo-container"] // 配置插件
+  plugins: ["demo-container"], // 配置插件
 };
