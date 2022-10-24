@@ -47,7 +47,7 @@
 
 ## 二、运行和打包部署
 
-### 1.1 环境配置
+### 2.1 环境配置
 
 > https://nodejs.org/en/download/ node js 官网下载，会自动配置 npm
 
@@ -57,7 +57,7 @@
 
 > 同一个项目本地环境的 node 版本不一致的话，node_modules 不可相互复制；如果本地开发环境更新了 node 版本，对应的 node_modules 也要重新下载，不然会报兼容性问题
 
-### 1.2 下载依赖指令 npm install
+### 2.2 下载依赖指令 npm install
 
 > 注意：下载 npm 包的时候是根据系统里边的.npmrc 文件指定的下载地址来下载的
 
@@ -70,7 +70,7 @@
 > 1.  网速问题导致包没有下载完全导致报错，重新执行 npm install 下载还不行的话，再删除 node_modules 目录重新下载试试
 > 2.  其他问题自行百度解决，无法解决的问下对应的前端开发人员
 
-### 1.3 运行指令 npm run dev
+### 2.3 运行指令 npm run dev
 
 > 注：ip 运行，可以让其他开发者访问你的本地开发环境
 
@@ -78,7 +78,7 @@
 
 > localhost 本地启动，其他开发者无法访问你的开发环境
 
-### 1.4 打包指令
+### 2.4 打包指令
 
 > 项目打包步骤（删除之前的 dist 目录，不然可能会出现更新问题）
 >
@@ -112,9 +112,9 @@
 >
 >     备注：如页面访问地址为http://vip.datadriver.com.cn:9062/iamac/#/dashboard，则相对路径会自动添加http://vip.datadriver.com.cn:9062/iamac/ 的内容
 
-### 1.5 公司环境部署
+### 2.5 公司环境部署
 
-#### 1.5.1 部署 203 服务器
+#### 2.5.1 部署 203 服务器
 
 > 地址：http://192.168.1.202:9090/jenkins/  
 > 账号密码： datadriver  datadriver
@@ -144,7 +144,7 @@
 >
 > 3. npm run build:prod // 打包
 
-#### 1.5.1.1 服务器端公司私有 npm 包更新失败
+#### 2.5.1.1 服务器端公司私有 npm 包更新失败
 
 > 解决方案：
 >
@@ -158,7 +158,7 @@
 >    <img :src="$withBase('/npmCache.png')" alt="npmCache">
 >    <img :src="$withBase('/npmCache2.png')" alt="npmCache2">
 
-#### 1.5.2 部署 204 服务器
+#### 2.5.2 部署 204 服务器
 
 - 1. 首次部署的做法：
 
@@ -357,7 +357,7 @@ baseApi: process.env.BASE_API,
 
 > 1.修改.npmrc 文件指向的下载路径为 https://registry.npm.taobao.org  或 http://registry.npmjs.org/
 
-### 6.2 菜单配置
+### 6.3 菜单配置
 
 #### 6.3.1 通配
 
