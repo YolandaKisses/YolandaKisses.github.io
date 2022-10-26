@@ -101,7 +101,7 @@ module.exports = {
               path: "/standard/code-lint.md"
             },
             {
-              title: "代码优化  ",
+              title: "简洁代码片段（推荐写法）",
               path: "/standard/code-review.md"
             }
           ]

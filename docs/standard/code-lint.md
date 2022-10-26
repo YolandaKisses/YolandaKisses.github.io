@@ -765,7 +765,231 @@ function ddCommonUnshift (n){ return n }
 }
 ```
 
-## 五、JS 语言规范
+> 6. 不要滥用百分比单位，百分比单位只能设置以下几个值或其倍数
+
+- 100%
+- 25% （1/4）
+- 20%（1/5）
+- 16.66666%（1/6）
+- 一般设置百分比的目的是为了按比例分配。 代码中大部分使用奇怪的比例，本意都是为了解决自适应间距的问题，而这类问题用 flex 解决会更好
+
+```css
+/* bad */
+.parent {
+  .child1 {
+    width: 10%;
+  }
+  .child2 {
+    width: 20%;
+  }
+  .child3 {
+    width: 70%;
+  }
+}
+
+/* good */
+.parent {
+  display: flex;
+  .child1 {
+    flex: 1;
+  }
+  .child2 {
+    flex: 2;
+  }
+  .child3 {
+    flex: 7;
+  }
+}
+```
+
+## 五、Vuex 使用注意点
+
+> Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化
+
+> 1. state:单一状态树，每个应用将仅仅包含一个 store 实例
+
+```javascript
+this.$store.state.shopCartData
+computed: {
+  ...mapState(['shopCartData'])
+}
+```
+
+> 2. getters:可以从 store 中的 state 中派生出一些状态，getters 的返回值会根据它的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算
+>    可以认为是 store 的计算属性
+
+```javascript
+this.$store.getters.shopCartData
+computed: {
+  ...mapGetters(['shopCartData'])
+}
+```
+
+> 3. mutations：更改 Vuex 的 store 中的状态的唯一方法是提交 mutation，全部采用大字母加下划线的设计风格，动词\_名词形式
+
+```javascript
+// vuex中定义
+INCREASE_SHOPCART(state, id){
+  state.shopCartData.forEach(e=>{
+    if(e.id === id){
+      e.count ++
+    }
+  })
+},
+GET_SHOPCART(state, data){
+  state.shopCartData = data
+},
+
+// 组件中使用
+methods: {
+  ...mapMutations([
+    'INCREASE_SHOPCART', //将mutation里的方法映射到该组件内
+  ]),
+  increase(id){
+    //由于上一步已经将mutation映射到组件内，所以组件可以直接调用INCREASE_SHOPCART
+    this.INCREASE_SHOPCART(id)
+  }
+}
+```
+
+> 4. actions: Action 提交的是 mutation，而不是直接变更状态，Action 可以包含任意异步操作
+
+```javascript
+getShopCartData(context,payload){
+  console.log(payload) // 我是参数payload
+  setTimeout(()=>{
+    context.commit('GET_SHOPCART', data)
+  },1000)
+}
+
+// 组件中使用
+methods:{
+  getShopCartData(){
+    this.$store.dispatch('getShopCartData', '我是参数payload')
+  }
+}
+```
+
+> 5. modules: 每个模块拥有自己的 state、mutation、action、getter、甚至是嵌套子模块，相对来说 本意就是 能够在大型项目中，更加细化的我们的状态管理，使得结构更加的清晰
+
+```javascript
+// index.js
+import Vue from "vue";
+import Vuex from "vuex";
+import moduleA from "@/store/modules/moduleA";
+Vue.use(Vuex);
+
+const store = new Vuex.Store({
+  state: {
+    name: "xxx"
+  },
+  mutations: {
+    CHANGE_NAME(state) {
+      state.name = "xxx+++";
+    }
+  },
+  actions: {},
+  // 就是使用modules属性在进行注册状态管理模块
+  modules: {
+    moduleA
+  }
+});
+```
+
+```javascript
+// moduleA.js
+export default {
+  state: {
+    name: "aaa"
+  },
+  getters: {},
+  mutations: {
+    CHANGE_NAME(state, msg) {
+      console.log(msg);
+      state.name = "aaa+++" + msg;
+    }
+  },
+  actions: {
+    actChangeName(context, msg) {
+      console.log(msg);
+      context.commit("CHANGE_NAME", msg);
+    }
+  }
+};
+```
+
+### 调用 state 中数据的方式
+
+> 由于我们是使用了模块化的方式，调用最外层的 state 中的数据 依然是 this.$store.state.name  
+>那么在使用 modulesA 中的方法的时候，是使用 this.$store.state.moduleA.name
+
+### 调用 mutations 或者是 actions 中的方法
+
+> 由于是没有对模块进行命名空间的，所以默认在使用 this.$store.commit/dispatch() 在提交方法的时候，会对所有状态管理的 actions 和 mutations 中的方法进行匹配，这就导致了一个问题，就是当不同模块之间的方法命名一样的情况下，会造成方法同时调用的问题  
+> 这个时候，我们需要在定义模块的时候，添加上 namespaced:true 属性
+
+```javascript
+export default {
+  namespaced: true, // 为当前模块开启独立的 命名空间
+  state: {
+    name: "aaa"
+  },
+  getters: {},
+  mutations: {
+    CHANGE_NAME(state, msg) {
+      console.log(msg);
+      state.name = "aaa+++" + msg;
+    }
+  },
+  actions: {
+    actChangeName(context, msg) {
+      console.log(msg);
+      context.commit("CHANGE_NAME", msg);
+    }
+  }
+};
+```
+
+### 使用命名空间之后的调用方式
+
+> 我们需要在使用 this.$store.commit/dispatch()  的时候 需要在前面加上我们当前模块名  
+> 例如： this.$store.commit("moduleA/changeName");  
+> this.$store.dispatch("moduleA/actChangeName");  
+> 这样就可以去调用指定的模块里面的方法，当前最外围的 mutations 和 actions 还是一样的调用方式
+
+### 在使用了模块后属性的参数变更
+
+> mutations 和 actions 的参数是没什么太大变化的  
+> getters 中是这样的
+
+```javascript
+getters: {
+  filters(state, getters, rootState) {
+    console.log(getters); // 代表的是getters属性
+    // rootState ---> 根节点的状态（也就是最外层的state）
+    return state.name + rootState.name;
+  }
+},
+```
+
+### 使用了模块化之后的辅助函数的使用
+
+```javascript
+import { createNamespacedHelpers } from "vuex";
+
+const { mapState, mapMutations, mapActions, mapGetters } = createNamespacedHelpers("moduleA");
+
+computed: {
+  ...mapState(["name"]),
+  ...mapGetters(["filters"]),
+}
+methods: {
+  ...mapMutations(["CHANGE_NAME"]),
+  ...mapActions(["actChangeName"]),
+}
+```
+
+## 六、JS 语言规范
 
 ### 类型
 
