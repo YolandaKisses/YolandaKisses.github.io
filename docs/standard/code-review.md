@@ -652,3 +652,115 @@ let checkoutType = () => {
 };
 let findStudentByAge = (arr, age = checkoutType()) => arr.filter((num) => num === age);
 ```
+
+## 25. 不要用字符串拼接 url
+
+```javascript
+// bad
+// 这段代码既没有对 key、value 做 encode
+// 也没有考虑 url 中 # 出现的情况
+const url = location.href;
+if (url.indexOf("?") >= 0) {
+  return url + key + "=" + value;
+} else {
+  return url + "?" + key + "=" + value;
+}
+// good
+// 使用标准的 URL 解析，风险会降低很多
+const url = new URL(urlStr);
+url.searchParams.set(key, value);
+return url.toString();
+```
+
+## 26. 用多态来代替条件语句
+
+```javascript
+// bad
+if (type === "text") {
+  // do something
+} else if (type === "select") {
+  // do something else
+}
+
+// good
+const control = {
+  text: {
+    mapper() {},
+    restore() {},
+    name: "this is a text field"
+  },
+  select: {
+    mapper() {},
+    restore() {},
+    name: "this is a select field"
+  }
+};
+```
+
+## 27. 防止崩溃的可选链
+
+```javascript
+const student = {
+  name: "Matt",
+  age: 27,
+  address: {
+    state: "New York"
+  }
+};
+
+// bad
+console.log(student && student.address && student.address.ZIPCode); // Doesn't exist - Returns undefined
+
+// good
+console.log(student?.address?.ZIPCode); // Doesn't exist - Returns undefined
+```
+
+## 28. 推荐使用函数式编程 reduce
+
+```javascript
+// bad
+const items = [
+  {
+    name: "Coffe",
+    price: 500
+  },
+  {
+    name: "Ham",
+    price: 1500
+  },
+  {
+    name: "Bread",
+    price: 150
+  },
+  {
+    name: "Donuts",
+    price: 1000
+  }
+];
+
+let total = 0;
+for (let i = 0; i < items.length; i++) {
+  total += items[i].price;
+}
+
+// good
+const total = items.map(({ price }) => price).reduce((total, price) => total + price);
+```
+
+## 29. 双重非位运算简写
+
+```javascript
+// bad
+Math.floor(4.9) === 4; //true
+// good
+~~4.9 === 4; //true
+```
+
+## 30. 对象动态属性名
+
+```javascript
+// good
+obj = {};
+let index = 1;
+obj[`key${index}`] = "内容";
+```
