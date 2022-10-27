@@ -80,7 +80,10 @@ module.exports = {
                 { title: "验证电子邮箱格式是否正确", path: "/pages/utils/RegExp/valid-email.md" },
                 { title: "验证手机号格式是否正确", path: "/pages/utils/RegExp/phone.md" },
                 { title: "判断是否为空", path: "/pages/utils/RegExp/is-null.md" },
-                { title: "验证身份证号", path: "/pages/utils/RegExp/validIdentity.md" }
+                { title: "验证身份证号", path: "/pages/utils/RegExp/validIdentity.md" },
+                { title: "验证日期格式是否正确", path: "/pages/utils/RegExp/valid-date.md" },
+                { title: "验证密码格式是否正确", path: "/pages/utils/RegExp/valid-pwd.md" },
+                { title: "验证强密码格式是否正确", path: "/pages/utils/RegExp/valid-pwd-strong" },
               ]
             }
           ]
